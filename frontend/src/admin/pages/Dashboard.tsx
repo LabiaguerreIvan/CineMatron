@@ -1,16 +1,28 @@
 import React from 'react';
-import AdminNavbar from '../components/AdminNavbar';
+import { Container, Typography } from '@mui/material';
+import AdminNavbar from '../components/AdminNavbar'; // Asegúrate de que la ruta sea correcta
+import Footer from '../../components/Footer'; // Asegúrate de que la ruta sea correcta
 
-const Dashboard: React.FC = () => {
+const AdminDashboard: React.FC = () => {
     return (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: '#e3f2fd' }}>
+            {/* Navbar */}
             <AdminNavbar />
-            <div className="container mx-auto p-4">
-                <h1 className="text-2xl font-bold">Panel de Administrador</h1>
-                <p>Bienvenido al panel. Desde aquí puedes gestionar el sistema.</p>
-            </div>
+
+            {/* Contenido principal */}
+            <Container sx={{ flexGrow: 1, py: 4 }}>
+                <Typography variant="h3" gutterBottom>
+                    Panel de Administrador
+                </Typography>
+                <Typography variant="body1">
+                    Bienvenido al panel. Desde aquí puedes gestionar el sistema.
+                </Typography>
+            </Container>
+
+            {/* Footer */}
+            <Footer />
         </div>
     );
 };
 
-export default Dashboard;
+export default AdminDashboard;
